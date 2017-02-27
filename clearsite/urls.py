@@ -18,9 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
     url(r'', include('corpusbank.urls')),
-=======
-    url(r'', include(corpusbank.urls)),
->>>>>>> 6226d77f147d304390539cfcee2adb5de49bc975
 ]
