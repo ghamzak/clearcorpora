@@ -1,0 +1,31 @@
+{% extends 'corpusbank/base.html' %}
+
+{% block content %}
+    <div class="post">
+    	<h1>{{ post.name }}</h1>
+
+    	{% if post.language %}
+            <div>
+                <p> Language: {{ post.language }} </p>
+            </div>
+        {% endif %}
+
+        {% if post.project %}
+            <div>
+                <p> Project: {{ post.project }} </p>
+            </div>
+        {% endif %}
+
+        {% if post.verbsaddress %}
+            <div>
+                <p> Address on Verbs: {{ post.verbsaddress }} </p>
+            </div>
+        {% endif %}
+        
+        {% if post.physical %}
+            <div>
+                <p> Physical Disc in the library: {{ post.physical }} </p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

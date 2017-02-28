@@ -1,23 +1,10 @@
-{% load staticfiles  %}
-<html>
-    <head>
-        <title>CLEAR Corpora</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{% static 'css/corpora.css' %}">
-    </head>
-    <body>
-        <div>
-            <h1><a href="">CLEAR Corpora</a></h1>
-        </div>
+{% extends 'corpusbank/base.html' %}
 
-
-	<div>
-	  {% for i in desired  %}
-	      <h3> Name: {{ i.name  }}  </h3>
-	      <p> Cataloug ID: {{ i.catid  }}  </p>
-	  {% endfor  %}
-	</div>
-
-    </body>
-</html>
+{% block content %}
+	{% for post in posts %}
+		<div class="post">
+			<h3><a href="{% url 'post_detail' pk=post.pk %}"> Name: {{ post.name }} </a> </h3>
+			<p> Cataloug ID: {{ post.catid }}  </p>
+		</div>
+	{% endfor %}
+{% endblock %}
