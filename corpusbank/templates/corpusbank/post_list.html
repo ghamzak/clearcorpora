@@ -3,8 +3,8 @@
 {% block content %}
 	{% for post in posts %}
 		<div class="post">
-			<h3><a href="{% url 'post_detail' pk=post.pk %}"> Name: {{ post.name }} </a> </h3>
-			<p> Cataloug ID: {{ post.catid }}  </p>
+			<h3><a href="{% url 'post_detail' pk=post.pk %}"> {{ post.name }} </a> </h3>
+			<p> Catalog ID: {{ post.catid }}  </p>
 		</div>
 	{% endfor %}
 {% endblock %}

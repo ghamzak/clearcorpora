@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def post_list(request):
-    posts = Corpusobject.objects.filter(knownloc = True).order_by('catid')
+    posts = Corpusobject.objects.filter(knownloc = True).order_by('name')
     return render(request, 'corpusbank/post_list.html', {'posts' : posts})
 
 def post_detail(request, pk):
