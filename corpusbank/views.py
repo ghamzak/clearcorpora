@@ -52,22 +52,22 @@ def search(request):
 		if not (qn or qc or ql):
 			error = True
 		elif qn and (not qc and not ql):
-			myresults = Corpusobject.objects.filter(name__icontains=qn)
+			myresults = Corpusobject.objects.filter(name__icontains=qn).order_by('name')
 			return render(request, 'corpusbank/search_results.html', {'myresults': myresults, 'query': qn})
 		elif qc and (not qn and not ql):
-			myresults = Corpusobject.objects.filter(catid__icontains=qc)
+			myresults = Corpusobject.objects.filter(catid__icontains=qc).order_by('name')
 			return render(request, 'corpusbank/search_results.html', {'myresults': myresults, 'query': qc})
 		elif ql and (not qn and not qc):
-			myresults = Corpusobject.objects.filter(language__icontains=ql)
+			myresults = Corpusobject.objects.filter(language__icontains=ql).order_by('name')
 			return render(request, 'corpusbank/search_results.html', {'myresults': myresults, 'query': ql})
 		elif (qc and qn) and not ql:
-			myresults = Corpusobject.objects.filter(name__icontains=qn).filter(catid__icontains=qc)
+			myresults = Corpusobject.objects.filter(name__icontains=qn).filter(catid__icontains=qc).order_by('name')
 			return render(request, 'corpusbank/search_results.html', {'myresults': myresults})
 		elif (qc and ql) and not qn:
-			myresults = Corpusobject.objects.filter(catid__icontains=qc).filter(language__icontains=ql)
+			myresults = Corpusobject.objects.filter(catid__icontains=qc).filter(language__icontains=ql).order_by('name')
 			return render(request, 'corpusbank/search_results.html', {'myresults': myresults})
 		elif (qn and ql) and not qc:
-			myresults = Corpusobject.objects.filter(name__icontains=qn).filter(language__icontains=ql)
+			myresults = Corpusobject.objects.filter(name__icontains=qn).filter(language__icontains=ql).order_by('name')
 			return render(request, 'corpusbank/search_results.html', {'myresults': myresults})
 	return render(request, 'corpusbank/search_form.html', {'error': error})
 
