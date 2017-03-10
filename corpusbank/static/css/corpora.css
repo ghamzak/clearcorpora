@@ -20,6 +20,9 @@ h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
 }
 
+
+
+
 .content {
     margin-left: 40px;
 }
@@ -44,7 +47,13 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-
+.contactinfo {
+    background-color: #d6f5f5;
+    width: 100%;
+    border: 5px solid #47d1d1;
+    padding: 20px;
+    margin: 5px;
+}
 
 h1 a {
     color: #FCA205;
