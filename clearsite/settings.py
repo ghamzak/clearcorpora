@@ -25,7 +25,7 @@ SECRET_KEY = '^b!1ca=f5wben6(#4bh6_6!5he=5tv(z#71*17^q!zq&tne+47'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'ghamzak.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'ghamzak.pythonanywhere.com', 'verbs.colorado.edu/CUCorpusInfo']
 
 
 # Application definition

@@ -33,10 +33,19 @@
             </div>
         {% endif %}
 
-        {% if post.downloadable %}
+        {% if post.downloadable is True %}
         	<div>
         		<p> Downloadable from the LDC Intranet </p>
         	</div>
+        <!-- {% elif post.downloadable is False %}
+            <div>
+                <p> Not Downloadable from the LDC Intranet </p>
+            </div>
+        {% elif post.downloadable is None %}
+            <div>
+                <p> Downloadable from the LDC Intranet? TBD! </p>
+            </div> -->
+
         {% endif %}
     </div>
 {% endblock %}
